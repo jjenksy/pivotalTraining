@@ -1,0 +1,9 @@
+
+
+custom:
+  message: "Hello Spring Boot!"
+
+
+person:
+  greeting: "Hello"
+  farewell: "Good Bye"

@@ -1,0 +1,2 @@
+config:
+  message: "Hello from prod config file!"
