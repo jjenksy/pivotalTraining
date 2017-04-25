@@ -7,3 +7,14 @@ custom:
 person:
   greeting: "Hello"
   farewell: "Good Bye"
+
+---
+#to use add the SPRING_PROFILES_ACTIVE=production to the executable jar command java -jar spring-demo-jjenksy-0.0.1-SNAPSHOT.jar
+spring:
+  profiles: production
+custom:
+  message: "Hello from prod config file!"
+
+person:
+  greeting: "Hello production"
+  farewell: "Good Bye production"
