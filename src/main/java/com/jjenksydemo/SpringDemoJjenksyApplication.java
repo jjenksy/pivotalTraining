@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringDemoJjenksyApplication {
 
+
 	final private PersonProperties personProperties;
 
 	@Autowired
