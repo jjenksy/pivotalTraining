@@ -1,0 +1,40 @@
+package com.jjenksydemo.ctrl;
+
+import com.jjenksydemo.domain.Marketing;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.*;
+
+/**
+ * Created by jenksy on 5/1/17.
+ * Spring web and groovy templates example
+ * This controller sets up some domain objects for display and then renders
+ * the home view to display those objects.
+ */
+
+@RestController
+public class MainController {
+
+    @RequestMapping("/")
+    public ModelAndView home() {
+
+        @SuppressWarnings("serial")
+        List<Marketing> offers = new ArrayList<Marketing>() {{
+            add(new Marketing("Product", "Easy Payments! Only $1 at month with 500 code snippets."));
+            add(new Marketing("GitHub Gists", "Easy Integration with GitHub Gists. Share with everybody!"));
+
+            add(new Marketing("REST API", "Powerful REST API to manage your Code Snippets in your own Programming Language"));
+            add(new Marketing("OAuth Security", "Keep you Code Snippets secured with Authentication and Authorization based on OAuth."));
+        }};
+
+
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("today", new Date());
+        model.put("offers", offers);
+
+
+        return new ModelAndView("views/home", model);
+    }
+}
